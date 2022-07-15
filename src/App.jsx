@@ -1,16 +1,13 @@
 import moment from 'moment';
 import React, { useState } from 'react';
+import Calender from './component/calender';
 
 function App() {
-	const [birth, setBirth] = useState('')
+	const [birth, setBirth] = useState(moment().format('YYYY-MM-DD'))
 	const [today, setToday] = useState(moment().format('YYYY-MM-DD'))
 
-	const changeBirthHandler = (e) => {
-		setBirth(e.target.value)
-	}
-
-	const changeTodayHandler = (e) => {
-		setToday(e.target.value)
+	const handleTodayChange = (data) => {
+		setToday(data)
 	}
 
 	function getYearsMonthsDays(date1, date2) {
@@ -45,19 +42,10 @@ function App() {
 	return (
 		<div className="flex flex-col justify-center items-center w-screen h-screen bg-gray-900">
 			<div className="md:w-2/5 w-10/12">
-				<h1 className="text-white text-3xl text-center mb-3 font-sans font-semibold">Age Calculator</h1>
+				<h1 className="text-white text-3xl text-center mb-3 font-sans font-semibold">Gearing Ratio Calculator</h1>
 				<div className="flex flex-col rounded mx-auto bg-gray-500 px-6 py-8 w-full">
-					<label className="block text-white text-sm font-bold mb-2" htmlFor="birth">
-						Birthday
-					</label>
-					<input value={birth.length > 0 ? birth : today} onChange={changeBirthHandler} type="date" name="birth" id="birth" className="bg-white p-3 rounded mb-3 focus:outline-none focus:ring-2 ring-blue-500 w-full" placeholder="Birthday" />
-
-					<label className="block text-white text-sm font-bold mb-2" htmlFor="today">
-						Today
-					</label>
-					<input value={today} onChange={changeTodayHandler} type="date" name="today" id="today" className="bg-white p-3 rounded mb-3 focus:outline-none focus:ring-2 ring-blue-500 w-full" placeholder="Today" />
-
-
+					<Calender onDayChange={handleTodayChange} day={today} label="today"/>
+					<Calender onDayChange={handleTodayChange} day={birth} label="birthday"/>
 					<h3 className="text-center lg:text-2xl md:text-lg text-base font-semibold text-white">
 						{birth.length > 0 && today.length > 0 ? getYearsMonthsDays(birth, today) : ''}
 					</h3>
