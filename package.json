@@ -1,7 +1,7 @@
 {
   "name": "rowing-calculator",
   "version": "0.0.0",
-  "homepage": "https://itsrafsanjani.github.io/react-age-calculator/",
+  "homepage": "https://pine5274.github.io/rowing-calculator/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
