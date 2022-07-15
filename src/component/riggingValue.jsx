@@ -1,21 +1,22 @@
 import React from "react";
 
-const Calender = ({ day, onDayChange, label }) => {
+const RiggingValue = ({ value, onValueChange, label }) => {
 
-  const handleDayInput = (event) => {
-    onDayChange(event.target.value);
+  const handleInput = (event) => {
+    onValueChange(event.target.value);
   };
   return (
     <>
         <label className="block text-white text-sm font-bold mb-2" htmlFor="birth">{label}</label>
         <input
-            value={day}
-            onChange={handleDayInput}
+            value={value}
+            onChange={handleInput}
             className="bg-white p-3 rounded mb-3 focus:outline-none focus:ring-2 ring-blue-500 w-full"
             id={label}
             name={label}
             placeholder={label}
-            type="date"
+            type="text"
+            inputMode="numeric"
             required
             autoComplete="off"
         />
@@ -23,4 +24,4 @@ const Calender = ({ day, onDayChange, label }) => {
   );
 };
 
-export default Calender;
+export default RiggingValue;

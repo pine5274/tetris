@@ -1,42 +1,22 @@
-import moment from 'moment';
-import React, { useState } from 'react';
-import Calender from './component/calender';
+import React, { useState, useEffect } from 'react';
+import RiggingValue from './component/riggingValue';
 
 function App() {
-	const [birth, setBirth] = useState(moment().format('YYYY-MM-DD'))
-	const [today, setToday] = useState(moment().format('YYYY-MM-DD'))
-
-	const handleTodayChange = (data) => {
-		setToday(data)
+	const [span, setSpan] = useState(159);
+	const [oarLength, setOarLength] = useState(286);
+	const [inboard, setInboard] = useState(88);
+	const [gearingRatio, setGearingRation] = useState(0);
+	useEffect(() => {
+		setGearingRation((oarLength - inboard) / (span/2));
+	})
+	const handleSpanChange = (data) => {
+		setSpan(data);
 	}
-
-	function getYearsMonthsDays(date1, date2) {
-		const a = moment(date1);
-		const b = moment(date2);
-		var years = a.diff(b, 'year');
-		b.add(years, 'years');
-
-		const noOfDaysInb = b.daysInMonth();
-		const noOfDaysIna = a.daysInMonth();
-		let months = 0;
-		if (noOfDaysInb > noOfDaysIna) {
-			months = b.diff(a, "months");
-			a.add(months, "months");
-		} else {
-			months = a.diff(b, 'months');
-			b.add(months, 'months');
-		}
-		var days = a.diff(b, 'days');
-
-		var totalYears = Math.abs(years);
-		var totalMonths = Math.abs(months);
-		var totalDays = Math.abs(days);
-
-		if (totalMonths == 0 && totalDays == 0 && totalYears > 0) {
-			return `Happy Birthday! 🎉 You're ${totalYears} years old!`;
-		}
-
-		return `${totalYears} Years ${totalMonths} Months ${totalDays} Days`;
+	const handleOarLengthChange = (data) => {
+		setOarLength(data);
+	}
+	const handleInboardChange = (data) => {
+		setInboard(data);
 	}
 
 	return (
@@ -44,12 +24,13 @@ function App() {
 			<div className="md:w-2/5 w-10/12">
 				<h1 className="text-white text-3xl text-center mb-3 font-sans font-semibold">Gearing Ratio Calculator</h1>
 				<div className="flex flex-col rounded mx-auto bg-gray-500 px-6 py-8 w-full">
-					<Calender onDayChange={handleTodayChange} day={today} label="today"/>
-					<Calender onDayChange={handleTodayChange} day={birth} label="birthday"/>
-					<h3 className="text-center lg:text-2xl md:text-lg text-base font-semibold text-white">
-						{birth.length > 0 && today.length > 0 ? getYearsMonthsDays(birth, today) : ''}
-					</h3>
+					<RiggingValue onValueChange={handleSpanChange} value={span} label="Span" />
+					<RiggingValue onValueChange={handleOarLengthChange} value={oarLength} label="Oar Length" />
+					<RiggingValue onValueChange={handleInboardChange} value={inboard} label="Inboard" />
 				</div>
+				<h3 className="text-center lg:text-2xl md:text-lg text-base font-semibold text-white">
+						Gearing Ration: {gearingRatio}
+				</h3>
 			</div>
 		</div>
 	);
