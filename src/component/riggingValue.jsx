@@ -5,6 +5,7 @@ const RiggingValue = ({ value, onValueChange, label }) => {
   const handleInput = (event) => {
     onValueChange(event.target.value);
   };
+
   return (
     <>
         <label className="block text-white text-sm font-bold mb-2" htmlFor="birth">{label}</label>
