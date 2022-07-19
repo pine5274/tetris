@@ -1,10 +1,9 @@
 {
   "name": "rowing-calculator",
   "version": "0.0.0",
-  "homepage": "https://pine5274.github.io/rowing-calculator/",
+  "homepage": "https://pine5274.github.io/rowing-calculator",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "yarn build && gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
@@ -14,7 +13,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.9.0",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
