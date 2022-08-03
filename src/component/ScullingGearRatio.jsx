@@ -11,12 +11,15 @@ const ScullingGearRatio = () => {
     const [oarLength, setOarLength] = useState(286);
     const [inboard, setInboard] = useState(88);
     const [gearingRatio, setGearingRation] = useState(0);
+    const [overLap, setOverLap] = useState(0);
     useEffect(() => {
         if (span <= 0) {
             setGearingRation('');
         } else {
             const gearingRatio = (oarLength - inboard) / (span/2);
             setGearingRation(gearingRatio.toFixed(3));
+            const overLap = inboard * 2 - span;
+            setOverLap(overLap);
         }	
     })
 
@@ -61,8 +64,8 @@ const ScullingGearRatio = () => {
                     }}
                     />
                 <TextField
-                    label="Oal Length"
-                    id="oal-length"
+                    label="Oar Length"
+                    id="oar-length"
                     sx={{ m: 1, width: '25ch' }}
                     value={oarLength}
                     onChange={handleOarLengthChange}
@@ -83,6 +86,9 @@ const ScullingGearRatio = () => {
             </Box>
             <h2>
                 Gearing Ration: {gearingRatio}
+            </h2>
+            <h2>
+                Over Lap: {overLap}
             </h2>
             <Divider />
             <h3>
