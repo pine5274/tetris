@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { getScullingExample } from "../data/oarRig"
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -33,25 +32,8 @@ const ScullingGearRatio = () => {
         setInboard(e.target.value);
     }
 
-    function createData(
-        scull,
-        span,
-        length,
-        inboard,
-        outboard,
-        overlap,
-        gearingRatio
-    ) {
-        return { scull, span, length, inboard, outboard, overlap, gearingRatio };
-    }
-
-    const r = getScullingExample().map((x) => {
-        return createData(x.Scull, x.Span, x.OarLength, x.Inboard, x.Outboard, x.Overlap, x.GearingRatio)
-    })
-
     return (
         <>
-            <h1 className="text-white text-3xl text-center mb-3 font-sans font-semibold">Gearing Ratio Calculator</h1>
             <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                 <TextField
                     label="Span"
