@@ -64,6 +64,85 @@ const scullingExample = [
     }
 ]
 
+const sweepExample = [
+    {
+        "Sweep": "M2-",
+        "RiggerSpread": 87,
+        "OarLength": 374,
+        "Inboard": 117,
+        "Outboard": 257,
+        "Overlap": 30,
+        "GearingRatio": 2.95
+      },
+      {
+        "Sweep": "M2+",
+        "RiggerSpread": 88,
+        "OarLength": 374,
+        "Inboard": 118,
+        "Outboard": 256,
+        "Overlap": 30,
+        "GearingRatio": 2.91
+      },
+      {
+        "Sweep": "M4-",
+        "RiggerSpread": 85,
+        "OarLength": 374,
+        "Inboard": 115,
+        "Outboard": 259,
+        "Overlap": 30,
+        "GearingRatio": 3.05
+      },
+      {
+        "Sweep": "M4+",
+        "RiggerSpread": 86,
+        "OarLength": 374,
+        "Inboard": 116,
+        "Outboard": 258,
+        "Overlap": 30,
+        "GearingRatio": 3
+      },
+      {
+        "Sweep": "M8+",
+        "RiggerSpread": 84,
+        "OarLength": 374,
+        "Inboard": 114,
+        "Outboard": 260,
+        "Overlap": 30,
+        "GearingRatio": 3.1
+      },
+      {
+        "Sweep": "W2-",
+        "RiggerSpread": 86,
+        "OarLength": 372,
+        "Inboard": 116,
+        "Outboard": 256,
+        "Overlap": 30,
+        "GearingRatio": 2.98
+      },
+      {
+        "Sweep": "W4-",
+        "RiggerSpread": 85,
+        "OarLength": 372,
+        "Inboard": 115,
+        "Outboard": 257,
+        "Overlap": 30,
+        "GearingRatio": 3.02
+      },
+      {
+        "Sweep": "W8+",
+        "RiggerSpread": 84,
+        "OarLength": 372,
+        "Inboard": 114,
+        "Outboard": 258,
+        "Overlap": 30,
+        "GearingRatio": 3.07
+      }
+]
+
+export function getSweepExample() {
+    return sweepExample;
+}
+
 export function getScullingExample() {
     return scullingExample;
 }

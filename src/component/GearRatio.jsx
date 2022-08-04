@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
 import ScullingGearRatio from './ScullingGearRatio';
+import SweepGearRatio from './SweepGearRatio';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -51,19 +52,15 @@ const GearRatio = () => {
             <Box sx={{ width: '100%' }}>
 				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 					<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-						<Tab label="Item One" {...a11yProps(0)} />
-						<Tab label="Item Two" {...a11yProps(1)} />
-						<Tab label="Item Three" {...a11yProps(2)} />
+						<Tab label="Sculling" {...a11yProps(0)} />
+						<Tab label="Sweep" {...a11yProps(1)} />
 					</Tabs>
 				</Box>
 				<TabPanel value={value} index={0}>
 					<ScullingGearRatio />
 				</TabPanel>
 				<TabPanel value={value} index={1}>
-					Item Two
-				</TabPanel>
-				<TabPanel value={value} index={2}>
-					Item Three
+					<SweepGearRatio />
 				</TabPanel>
 			</Box>
         </>

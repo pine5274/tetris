@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import ScullingGearRatio from './component/ScullingGearRatio';
 import GearRatio from './component/GearRatio';
 
 const darkTheme = createTheme({
