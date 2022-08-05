@@ -48,10 +48,14 @@ const GearRatio = () => {
 
     return (
         <>
-			<h1 className="text-white text-3xl text-center mb-3 font-sans font-semibold">Gearing Ratio Calculator</h1>
+			<h1>Gearing Ratio Calculator</h1>
             <Box sx={{ width: '100%' }}>
 				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-					<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+					<Tabs 
+						value={value}
+						onChange={handleChange}
+						aria-label="basic tabs example"
+					>
 						<Tab label="Sculling" {...a11yProps(0)} />
 						<Tab label="Sweep" {...a11yProps(1)} />
 					</Tabs>
