@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Sidebar from './component/Sidebar';
 import Index from './component/pages/Index';
-import GearRatio from './component/GearRatio';
+import GearRatio from './component/pages/GearRatio/GearRatio';
 import NoMatch from './component/pages/NoMatch';
 
 const darkTheme = createTheme({

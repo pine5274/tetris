@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSweepExample } from "../data/oarRig"
+import { getScullingExample } from "../../../data/oarRig"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,30 +8,30 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const SweepExample = () => {
+const ScullingExample = () => {
     function createData(
-        sweep,
-        spread,
+        scull,
+        span,
         length,
         inboard,
         outboard,
         overlap,
         gearingRatio
     ) {
-        return { sweep, spread, length, inboard, outboard, overlap, gearingRatio };
+        return { scull, span, length, inboard, outboard, overlap, gearingRatio };
     }
 
-    const rows = getSweepExample().map((x) => {
-        return createData(x.Sweep, x.RiggerSpread, x.OarLength, x.Inboard, x.Outboard, x.Overlap, x.GearingRatio)
+    const rows = getScullingExample().map((x) => {
+        return createData(x.Scull, x.Span, x.OarLength, x.Inboard, x.Outboard, x.Overlap, x.GearingRatio)
     })
 
     return (
         <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} size="small" aria-label="sweep table">
+            <Table sx={{ minWidth: 650 }} size="small" aria-label="sculling table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Sweep</TableCell>
-                        <TableCell align="right">Rigger&nbsp;Spread&nbsp;(cm)</TableCell>
+                        <TableCell>Scull</TableCell>
+                        <TableCell align="right">Span&nbsp;(cm)</TableCell>
                         <TableCell align="right">Oar&nbsp;Length&nbsp;(cm)</TableCell>
                         <TableCell align="right">Inboard&nbsp;(cm)</TableCell>
                         <TableCell align="right">Outboard&nbsp;(cm)</TableCell>
@@ -42,13 +42,13 @@ const SweepExample = () => {
                 <TableBody>
                 {rows.map((row) => (
                     <TableRow
-                        key={row.sweep}
+                        key={row.scull}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                         <TableCell component="th" scope="row">
-                            {row.sweep}
+                            {row.scull}
                         </TableCell>
-                        <TableCell align="right">{row.spread}</TableCell>
+                        <TableCell align="right">{row.span}</TableCell>
                         <TableCell align="right">{row.length}</TableCell>
                         <TableCell align="right">{row.inboard}</TableCell>
                         <TableCell align="right">{row.outboard}</TableCell>
@@ -62,4 +62,4 @@ const SweepExample = () => {
     )
 }
 
-export default SweepExample;
+export default ScullingExample;

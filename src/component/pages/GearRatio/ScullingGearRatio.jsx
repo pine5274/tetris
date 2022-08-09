@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import ScullingExample from './ScullingExample';
-import { Typography } from '@mui/material';
 
 const ScullingGearRatio = () => {
     const [span, setSpan] = useState(159);
