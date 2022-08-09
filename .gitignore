@@ -6,3 +6,4 @@ build
 *.local
 package-lock.json
 yarn.lock
+TODO.md
