@@ -1,10 +1,13 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Sidebar from './component/Sidebar';
+import Index from './component/pages/Index';
 import GearRatio from './component/GearRatio';
+import NoMatch from './component/pages/NoMatch';
 
 const darkTheme = createTheme({
   palette: {
@@ -43,14 +46,20 @@ function App() {
 		<ThemeProvider theme={darkTheme}>
 			<Box sx={{ display: 'flex' }}>
 				<CssBaseline />
-				<Sidebar drawerWidth={drawerWidth} />
-				<Box
-					component="main"
-					sx={{ flexGrow: 1, p: 3, width: { lg: `calc(100% - ${drawerWidth}px)` } }}
-					>
-					<Toolbar />
-					<GearRatio />
-				</Box>	
+				<BrowserRouter>
+					<Sidebar drawerWidth={drawerWidth} />
+					<Box
+						component="main"
+						sx={{ flexGrow: 1, p: 3, width: { lg: `calc(100% - ${drawerWidth}px)` } }}
+						>
+							<Toolbar />
+							<Routes>
+								<Route path="/" element={<Index />} />
+								<Route path="/a" element={<GearRatio />} />
+								<Route path="*" element={<NoMatch />} />
+							</Routes>
+					</Box>	
+				</BrowserRouter>
 			</Box>
 		</ThemeProvider>
 	);
