@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import IndexList from '../IndexList';
 import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper';
 
 const Index = () => {
   return (
     <Box>
-      Index
+      <h1>Welcome to Gearing Ratio Calculator</h1>
+      <Paper>
+        <IndexList />
+      </Paper>
     </Box>
   )
 }

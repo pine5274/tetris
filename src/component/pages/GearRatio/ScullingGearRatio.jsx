@@ -40,9 +40,10 @@ const ScullingGearRatio = () => {
                     id="span"
                     sx={{ m: 1, width: '25ch' }}
                     value={span}
+                    type="tel"
                     onChange={handleSpanChange}
                     InputProps={{
-                        startAdornment: <InputAdornment position="start">cm</InputAdornment>,
+                        endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}
                     />
                 <TextField
@@ -50,9 +51,10 @@ const ScullingGearRatio = () => {
                     id="oar-length"
                     sx={{ m: 1, width: '25ch' }}
                     value={oarLength}
+                    type="tel"
                     onChange={handleOarLengthChange}
                     InputProps={{
-                        startAdornment: <InputAdornment position="start">cm</InputAdornment>,
+                        endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}
                     />
                 <TextField
@@ -60,9 +62,10 @@ const ScullingGearRatio = () => {
                     id="inboard"
                     sx={{ m: 1, width: '25ch' }}
                     value={inboard}
+                    type="tel"
                     onChange={handleInboardChange}
                     InputProps={{
-                        startAdornment: <InputAdornment position="start">cm</InputAdornment>,
+                        endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}
                     />
             </Box>

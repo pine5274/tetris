@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import IndexList from './IndexList';
+import { Link as RouterLink } from 'react-router-dom'
+import Link from '@mui/material/Link';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -11,8 +13,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import SettingsIcon from '@mui/icons-material/Settings';
 import IconButton from '@mui/material/IconButton';
 import HomeIcon from '@mui/icons-material/Home';
 
@@ -27,44 +27,21 @@ const Sidebar = (props) => {
 		<div>
             <Toolbar />
             <Divider />
-            <List>
+			<List>
 				<ListItem key={'Index'} disablePadding>
 					<ListItemButton
-						component={Link}
+						component={RouterLink}
 						to="/"
 					>
 						<ListItemIcon>
 							<HomeIcon />
 						</ListItemIcon>
-						<ListItemText primary={'index'} />
+						<ListItemText primary={'Home'} />
 					</ListItemButton>
 				</ListItem>
-				<ListItem key={'Gearing Ratio'} disablePadding>
-					<ListItemButton
-						component={Link}
-						to="/gearing-ratio"
-					>
-						<ListItemIcon>
-							<SettingsIcon />
-						</ListItemIcon>
-						<ListItemText primary={'Gearing Ratio'} />
-					</ListItemButton>
-				</ListItem>
-            </List>
-            <Divider />
-            <List>
-				<ListItem key={'Gearing Ratio'} disablePadding>
-					<ListItemButton
-						component={Link}
-						to="/gearing-ratio"
-					>
-						<ListItemIcon>
-							<SettingsIcon />
-						</ListItemIcon>
-						<ListItemText primary={'Gearing Ratio'} />
-					</ListItemButton>
-				</ListItem>
-            </List>
+			</List>
+			<Divider />
+			<IndexList />
 		</div>
     );
 
@@ -87,9 +64,15 @@ const Sidebar = (props) => {
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" noWrap component="div">
+					<Link 
+						component={RouterLink}
+						to="/"
+						underline="none"
+						color="inherit"
+						variant="h6"
+					>
 						Rowing Calculator
-					</Typography>
+					</Link>
 				</Toolbar>
 			</AppBar>
 			<Box
