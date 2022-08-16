@@ -1,11 +1,11 @@
-import React from 'react'
-import Box from '@mui/material/Box'
+import React from 'react';
+import Typography from '@mui/material/Typography';
 
 const NoMatch = () => {
-  return (
-    <Box>
-      Nomatch
-    </Box>
-  )
+    return (
+        <Typography variant="h1" component="h1">
+            404 Not Found
+        </Typography>
+    )
 }
 export default NoMatch

@@ -55,7 +55,7 @@ function App() {
 							<Toolbar />
 							<Routes>
 								<Route path="/" element={<Index />} />
-								<Route path="/a" element={<GearRatio />} />
+								<Route path="/gearing-ratio" element={<GearRatio />} />
 								<Route path="*" element={<NoMatch />} />
 							</Routes>
 					</Box>	

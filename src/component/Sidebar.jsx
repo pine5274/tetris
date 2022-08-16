@@ -42,7 +42,7 @@ const Sidebar = (props) => {
 				<ListItem key={'Gearing Ratio'} disablePadding>
 					<ListItemButton
 						component={Link}
-						to="/a"
+						to="/gearing-ratio"
 					>
 						<ListItemIcon>
 							<SettingsIcon />
@@ -56,7 +56,7 @@ const Sidebar = (props) => {
 				<ListItem key={'Gearing Ratio'} disablePadding>
 					<ListItemButton
 						component={Link}
-						to="/a"
+						to="/gearing-ratio"
 					>
 						<ListItemIcon>
 							<SettingsIcon />
