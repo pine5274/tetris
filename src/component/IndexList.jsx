@@ -22,6 +22,17 @@ const IndexList = () => {
                     <ListItemText primary={'Gearing Ratio'} />
                 </ListItemButton>
             </ListItem>
+            <ListItem key={'Pace to Watt'} disablePadding>
+                <ListItemButton
+                    component={Link}
+                    to="/pace-to-watt"
+                >
+                    <ListItemIcon>
+                        <SettingsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={'Pace to Watt'} />
+                </ListItemButton>
+            </ListItem>
         </List>
     </>
   )

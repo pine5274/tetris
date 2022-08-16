@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Sidebar from './component/Sidebar';
 import Index from './component/pages/Index';
 import GearRatio from './component/pages/GearRatio/GearRatio';
+import PaceToWatt from './component/pages/PaceToWatt';
 import NoMatch from './component/pages/NoMatch';
 
 const darkTheme = createTheme({
@@ -56,6 +57,7 @@ function App() {
 							<Routes>
 								<Route path="/" element={<Index />} />
 								<Route path="/gearing-ratio" element={<GearRatio />} />
+								<Route path="/pace-to-watt" element={<PaceToWatt />} />
 								<Route path="*" element={<NoMatch />} />
 							</Routes>
 					</Box>	

@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 const Index = () => {
   return (
     <Box>
-      <h1>Welcome to Gearing Ratio Calculator</h1>
+      <h1>Welcome to Rowing Calculator</h1>
       <Paper>
         <IndexList />
       </Paper>
