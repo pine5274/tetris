@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
 
 const SweepExample = () => {
     function createData(
@@ -28,6 +29,13 @@ const SweepExample = () => {
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="sweep table">
+                <caption>
+                    cf.&nbsp;
+                    <Link href="https://d2wmdlq830ho5j.cloudfront.net/worldrowing/wp-content/uploads/2020/12/04183534/CoachingManualLevelII_English.pdf">
+                        The FISA Coaching Development Program;&nbsp;
+                    </Link>
+                    Club level for Big Blade
+                </caption>
                 <TableHead>
                     <TableRow>
                         <TableCell>Sweep</TableCell>

@@ -28,6 +28,7 @@ const ScullingExample = () => {
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="sculling table">
+                <caption>cf. High Performance Rowing (John McArthur)</caption>
                 <TableHead>
                     <TableRow>
                         <TableCell>Scull</TableCell>
