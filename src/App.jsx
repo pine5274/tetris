@@ -45,7 +45,7 @@ function App() {
 	const drawerWidth = 240;
 	return (
 		<ThemeProvider theme={darkTheme}>
-			<Box sx={{ display: 'flex' }}>
+			<Box sx={{ display: {lg: 'flex'} }}>
 				<CssBaseline />
 				<BrowserRouter>
 					<Sidebar drawerWidth={drawerWidth} />
