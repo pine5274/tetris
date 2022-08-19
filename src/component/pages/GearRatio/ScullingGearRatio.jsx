@@ -45,7 +45,7 @@ const ScullingGearRatio = () => {
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}
-                    />
+                />
                 <TextField
                     label="Oar Length"
                     id="oar-length"
@@ -56,7 +56,7 @@ const ScullingGearRatio = () => {
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}
-                    />
+                />
                 <TextField
                     label="Inboard"
                     id="inboard"
@@ -67,7 +67,7 @@ const ScullingGearRatio = () => {
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}
-                    />
+                />
             </Box>
             <h2>
                 Gearing Ration: {gearingRatio}
