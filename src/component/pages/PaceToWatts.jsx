@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -58,25 +59,42 @@ const PaceTo = () => {
                 <TextField
                     label="Minutes"
                     id="minutes"
-                    sx={{ m: 1, width: '25ch' }}
+                    sx={{ m: 1, width: '8ch' }}
                     value={minutes}
                     type="tel"
+                    size="small"
                     onChange={handleMinutesChange}
                 />
+                <Box
+                    sx={{ display: 'flex', alignItems: 'center', }}
+                >
+                    <Typography variant="h5" component="div">
+                        :
+                    </Typography>
+                </Box>
                 <TextField
                     label="Seconds"
                     id="seconds"
-                    sx={{ m: 1, width: '25ch' }}
+                    sx={{ m: 1, width: '8ch' }}
                     value={seconds}
                     type="tel"
+                    size="small"
                     onChange={handleSecondsChange}
                 />
+                <Box
+                    sx={{ display: 'flex', alignItems: 'center', }}
+                >
+                    <Typography variant="h5" component="div">
+                        .
+                    </Typography>
+                </Box>
                 <TextField
                     label="Tenths"
                     id="tenths"
-                    sx={{ m: 1, width: '25ch' }}
+                    sx={{ m: 1, width: '8ch' }}
                     value={tenths}
                     type="tel"
+                    size="small"
                     onChange={handleTenthsChange}
                 />
             </Box>
@@ -111,7 +129,7 @@ const WattsTo = () => {
                 <TextField
                     label="Watts"
                     id="watts"
-                    sx={{ m: 1, width: '25ch' }}
+                    sx={{ m: 1, width: '12ch' }}
                     value={watts}
                     type="tel"
                     onChange={handleWattsChange}
