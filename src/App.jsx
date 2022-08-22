@@ -9,46 +9,15 @@ import Index from './component/pages/Index';
 import GearRatio from './component/pages/GearingRatio';
 import PaceToWatts from './component/pages/PaceToWatts';
 import NoMatch from './component/pages/NoMatch';
+import { getPalette } from './data/palette';
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    primary: {
-      	main: '#96c2ff',
-    },
-    secondary: {
-     	main: '#e19fa1',
-    },
-    info: {
-     	main: '#8ec9ef',
-    },
-    text: {
-     	primary: '#f8faff',
-    },
-    success: {
-      	main: '#95dfaf',
-    },
-    warning: {
-     	main: '#eec988',
-    },
-    error: {
-     	main: '#d6bcfa',
-    },
-	background: {
-		default: '#313545',
-		paper: '#3b4252'
-	},
-	caption: {
-		main: '#c8cace',
-	}
-  },
-});
+const theme = createTheme(getPalette());
 
 function App() {
 	const drawerWidth = 240;
 	const ROUTE = '/rowing-calculator';
 	return (
-		<ThemeProvider theme={darkTheme}>
+		<ThemeProvider theme={theme}>
 			<Box sx={{ display: {lg: 'flex'} }}>
 				<CssBaseline />
 				<BrowserRouter>
