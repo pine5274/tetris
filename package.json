@@ -1,6 +1,7 @@
 {
   "name": "rowing-calculator",
   "version": "1.0.0",
+  "license": "MIT",
   "homepage": "https://pine5274.github.io/rowing-calculator",
   "scripts": {
     "deploy": "gh-pages -d build",
