@@ -104,14 +104,14 @@ const PaceTo = () => {
             <Divider />
             <Paper sx={{ p: 2, mt: 4, }}>
                 <Typography 
-                    sx={{ color: 'text.caption', }}
+                    sx={{ color: 'caption.main', }}
                     variant="body2"
                     component="div"
                 >
                     watts = 2.80/pace³
                 </Typography>
                 <Typography 
-                    sx={{ color: 'text.caption', }}
+                    sx={{ color: 'caption.main', }}
                     variant="body2"
                     component="div"
                 >
@@ -160,14 +160,14 @@ const WattsTo = () => {
             <Divider />
             <Paper sx={{ p: 2, mt: 4, }}>
                 <Typography 
-                    sx={{ color: 'text.caption', }}
+                    sx={{ color: 'caption.main', }}
                     variant="body2"
                     component="div"
                 >
                     pace = ³√(2.80/watts)
                 </Typography>
                 <Typography 
-                    sx={{ color: 'text.caption', }}
+                    sx={{ color: 'caption.main', }}
                     variant="body2"
                     component="div"
                 >

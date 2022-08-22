@@ -17,29 +17,29 @@ const darkTheme = createTheme({
       	main: '#96c2ff',
     },
     secondary: {
-     	 main: '#e19fa1',
+     	main: '#e19fa1',
     },
     info: {
-     	 main: '#8ec9ef',
+     	main: '#8ec9ef',
     },
     text: {
-     	 primary: '#f8faff',
+     	primary: '#f8faff',
     },
     success: {
       	main: '#95dfaf',
     },
     warning: {
-     	 main: '#eec988',
+     	main: '#eec988',
     },
     error: {
-     	 main: '#d6bcfa',
+     	main: '#d6bcfa',
     },
 	background: {
 		default: '#313545',
 		paper: '#3b4252'
 	},
-	text: {
-		caption: '#c8cace',
+	caption: {
+		main: '#c8cace',
 	}
   },
 });
