@@ -38,6 +38,9 @@ const darkTheme = createTheme({
 		default: '#313545',
 		paper: '#3b4252'
 	},
+	text: {
+		caption: '#c8cace',
+	}
   },
 });
 

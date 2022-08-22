@@ -6,6 +6,8 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -98,8 +100,26 @@ const PaceTo = () => {
                     onChange={handleTenthsChange}
                 />
             </Box>
-            <Divider />
             <h2>{watts} watts</h2>
+            <Divider />
+            <Paper sx={{ p: 2, mt: 4, }}>
+                <Typography 
+                    sx={{ color: 'text.caption', }}
+                    variant="body2"
+                    component="div"
+                >
+                    watts = 2.80/pace³
+                </Typography>
+                <Typography 
+                    sx={{ color: 'text.caption', }}
+                    variant="body2"
+                    component="div"
+                >
+                <Link href="https://www.concept2.com/indoor-rowers/training/calculators/watts-calculator">
+                    concept2 watts-calculator
+                </Link>
+                </Typography>
+            </Paper>
         </>
     )
 }
@@ -132,11 +152,30 @@ const WattsTo = () => {
                     sx={{ m: 1, width: '12ch' }}
                     value={watts}
                     type="tel"
+                    size="small"
                     onChange={handleWattsChange}
                 />
             </Box>
-            <Divider />
             <h2>{minutes}:{seconds} /500m</h2>
+            <Divider />
+            <Paper sx={{ p: 2, mt: 4, }}>
+                <Typography 
+                    sx={{ color: 'text.caption', }}
+                    variant="body2"
+                    component="div"
+                >
+                    pace = ³√(2.80/watts)
+                </Typography>
+                <Typography 
+                    sx={{ color: 'text.caption', }}
+                    variant="body2"
+                    component="div"
+                >
+                <Link href="https://www.concept2.com/indoor-rowers/training/calculators/watts-calculator">
+                    concept2 watts-calculator
+                </Link>
+                </Typography>
+            </Paper>
         </>
     )
 }
