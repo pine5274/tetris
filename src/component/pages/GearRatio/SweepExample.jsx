@@ -24,7 +24,7 @@ const SweepExample = () => {
 
     const rows = getSweepExample().map((x) => {
         return createData(x.Sweep, x.RiggerSpread, x.OarLength, x.Inboard, x.Outboard, x.Overlap, x.GearingRatio)
-    })
+    });
 
     return (
         <TableContainer component={Paper}>

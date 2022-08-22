@@ -43,7 +43,7 @@ const GearRatio = () => {
 	const [value, setValue] = React.useState(0);
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
-	  };
+	};
 
     return (
         <>
@@ -67,7 +67,7 @@ const GearRatio = () => {
 				</TabPanel>
 			</Box>
         </>
-      );
+	);
 }
 
 export default GearRatio;

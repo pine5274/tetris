@@ -20,7 +20,7 @@ const Sidebar = (props) => {
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
 	const handleDrawerToggle = () => {
-	  setMobileOpen(!mobileOpen);
+	  	setMobileOpen(!mobileOpen);
 	};
 
     const drawer = (
@@ -50,8 +50,8 @@ const Sidebar = (props) => {
             <AppBar
 				position="fixed"
 				sx={{
-				width: { lg: `calc(100% - ${props.drawerWidth}px)` },
-				ml: { lg: `${props.drawerWidth}px` },
+					width: { lg: `calc(100% - ${props.drawerWidth}px)` },
+					ml: { lg: `${props.drawerWidth}px` },
 				}}
 			>
 				<Toolbar>
