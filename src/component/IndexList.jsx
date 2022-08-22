@@ -26,12 +26,12 @@ const IndexList = () => {
                 <ListItem key={'Pace to Watt'} disablePadding>
                     <ListItemButton
                         component={Link}
-                        to={`${ROUTE}/pace-to-watt`}
+                        to={`${ROUTE}/pace-to-watts`}
                     >
                         <ListItemIcon>
                             <SettingsIcon />
                         </ListItemIcon>
-                        <ListItemText primary={'Pace to Watt'} />
+                        <ListItemText primary={'Pace to Watts'} />
                     </ListItemButton>
                 </ListItem>
             </List>

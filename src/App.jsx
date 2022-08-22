@@ -58,7 +58,7 @@ function App() {
 							<Routes>
 								<Route path={`${ROUTE}`} element={<Index />} />
 								<Route path={`${ROUTE}/gearing-ratio`} element={<GearRatio />} />
-								<Route path={`${ROUTE}/pace-to-watt`} element={<PaceToWatts />} />
+								<Route path={`${ROUTE}/pace-to-watts`} element={<PaceToWatts />} />
 								<Route path="*" element={<NoMatch />} />
 							</Routes>
 					</Box>	

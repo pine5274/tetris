@@ -139,8 +139,8 @@ const PaceToWatts = () => {
                     onChange={handleTabChange}
                     aria-label="secondary tabs example"
                 >
-                    <Tab value={0} label="Pace to Watt" />
-                    <Tab value={1} label="Watt to Pace" />
+                    <Tab value={0} label="Pace to Watts" />
+                    <Tab value={1} label="Watts to Pace" />
                 </Tabs>
                 </Box>
                 <TabPanel value={tabNum} index={0}>
