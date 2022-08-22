@@ -31,7 +31,7 @@ const Sidebar = (props) => {
 				<ListItem key={'Index'} disablePadding>
 					<ListItemButton
 						component={RouterLink}
-						to="/"
+						to="/rowing-calculator/"
 					>
 						<ListItemIcon>
 							<HomeIcon />

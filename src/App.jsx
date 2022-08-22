@@ -43,6 +43,7 @@ const darkTheme = createTheme({
 
 function App() {
 	const drawerWidth = 240;
+	const ROUTE = '/rowing-calculator';
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<Box sx={{ display: {lg: 'flex'} }}>
@@ -55,9 +56,9 @@ function App() {
 						>
 							<Toolbar />
 							<Routes>
-								<Route path="/" element={<Index />} />
-								<Route path="/gearing-ratio" element={<GearRatio />} />
-								<Route path="/pace-to-watt" element={<PaceToWatts />} />
+								<Route path={`${ROUTE}`} element={<Index />} />
+								<Route path={`${ROUTE}/gearing-ratio`} element={<GearRatio />} />
+								<Route path={`${ROUTE}/pace-to-watt`} element={<PaceToWatts />} />
 								<Route path="*" element={<NoMatch />} />
 							</Routes>
 					</Box>	
