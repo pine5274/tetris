@@ -35,6 +35,12 @@ const SweepExample = () => {
                         The FISA Coaching Development Program;&nbsp;
                     </Link>
                     Club level for Big Blade
+                    <br></br>
+                    Oar length of Fat Smoothy is 5cm shorter than Bigblade or Smoothy.
+                    <br></br>
+                    Overlap for sweep = Inboard - Spread
+                    <br></br>
+                    Gearing ratio = outboard / Rigger Spread
                 </caption>
                 <TableHead>
                     <TableRow>

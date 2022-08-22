@@ -28,7 +28,13 @@ const ScullingExample = () => {
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="sculling table">
-                <caption>cf. High Performance Rowing (John McArthur)</caption>
+                <caption>
+                    cf. High Performance Rowing (John McArthur)
+                    <br></br>
+                    Gearing ratio = Outboard / (Span/2)
+                    <br></br>
+                    Overlap for scull = Inboard*2 - Span
+                </caption>
                 <TableHead>
                     <TableRow>
                         <TableCell>Scull</TableCell>
