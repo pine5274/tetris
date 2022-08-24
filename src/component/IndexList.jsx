@@ -6,6 +6,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import SettingsIcon from '@mui/icons-material/Settings';
+import TransferWithinAStationIcon from '@mui/icons-material/TransferWithinAStation';
 
 const IndexList = () => {
     const ROUTE = '/rowing-calculator';
@@ -29,7 +30,7 @@ const IndexList = () => {
                         to={`${ROUTE}/pace-to-watts`}
                     >
                         <ListItemIcon>
-                            <SettingsIcon />
+                            <TransferWithinAStationIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Pace to Watts'} />
                     </ListItemButton>
