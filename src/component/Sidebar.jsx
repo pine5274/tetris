@@ -66,7 +66,7 @@ const Sidebar = (props) => {
 					</IconButton>
 					<Link 
 						component={RouterLink}
-						to="/"
+						to="/rowing-calculator/"
 						underline="none"
 						color="inherit"
 						variant="h6"
