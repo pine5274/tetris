@@ -63,7 +63,7 @@ const ScullingGearRatio = () => {
             const gearingRatio = (oarLength - inboard) / (span/2);
             setGearingRation(gearingRatio.toFixed(3));
             const overLap = inboard * 2 - span;
-            setOverLap(overLap);
+            setOverLap(overLap.toFixed(1));
         }	
     })
 
@@ -85,7 +85,7 @@ const ScullingGearRatio = () => {
                     id="span"
                     sx={{ m: 1, width: '25ch' }}
                     value={span}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     onChange={handleSpanChange}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
@@ -96,7 +96,7 @@ const ScullingGearRatio = () => {
                     id="oar-length"
                     sx={{ m: 1, width: '25ch' }}
                     value={oarLength}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     onChange={handleOarLengthChange}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
@@ -107,7 +107,7 @@ const ScullingGearRatio = () => {
                     id="inboard"
                     sx={{ m: 1, width: '25ch' }}
                     value={inboard}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     onChange={handleInboardChange}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
@@ -142,7 +142,7 @@ const SweepGearRatio = () => {
             const gearingRatio = (oarLength - inboard) / spread;
             setGearingRation(gearingRatio.toFixed(3));
             const overLap = inboard - spread;
-            setOverLap(overLap);
+            setOverLap(overLap.toFixed(1));
         }	
     })
 
@@ -164,7 +164,7 @@ const SweepGearRatio = () => {
                     id="spread"
                     sx={{ m: 1, width: '25ch' }}
                     value={spread}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     onChange={handleSpreadChange}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
@@ -175,7 +175,7 @@ const SweepGearRatio = () => {
                     id="oar-length"
                     sx={{ m: 1, width: '25ch' }}
                     value={oarLength}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     onChange={handleOarLengthChange}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,
@@ -186,7 +186,7 @@ const SweepGearRatio = () => {
                     id="inboard"
                     sx={{ m: 1, width: '25ch' }}
                     value={inboard}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     onChange={handleInboardChange}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">cm</InputAdornment>,

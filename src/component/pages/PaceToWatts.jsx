@@ -42,13 +42,13 @@ const PaceTo = () => {
     const [watts, setWatts] = useState(0);
   
     const handleMinutesChange = (e) => {
-        setMinutes(Number(e.target.value));
+        setMinutes(e.target.value);
     }
     const handleSecondsChange = (e) => {
-        setSeconds(Number(e.target.value));
+        setSeconds(e.target.value);
     }
     const handleTenthsChange = (e) => {
-        setTenths(Number(e.target.value));
+        setTenths(e.target.value);
     }
 
     useEffect(() => {
@@ -63,7 +63,7 @@ const PaceTo = () => {
                     id="minutes"
                     sx={{ m: 1, width: '8ch' }}
                     value={minutes}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     size="small"
                     onChange={handleMinutesChange}
                 />
@@ -79,7 +79,7 @@ const PaceTo = () => {
                     id="seconds"
                     sx={{ m: 1, width: '8ch' }}
                     value={seconds}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     size="small"
                     onChange={handleSecondsChange}
                 />
@@ -95,7 +95,7 @@ const PaceTo = () => {
                     id="tenths"
                     sx={{ m: 1, width: '8ch' }}
                     value={tenths}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     size="small"
                     onChange={handleTenthsChange}
                 />
@@ -130,7 +130,7 @@ const WattsTo = () => {
     const [watts, setWatts] = useState(200);
   
     const handleWattsChange = (e) => {
-        setWatts(Number(e.target.value));
+        setWatts(e.target.value);
     }
 
     useEffect(() => {
@@ -151,7 +151,7 @@ const WattsTo = () => {
                     id="watts"
                     sx={{ m: 1, width: '12ch' }}
                     value={watts}
-                    type="tel"
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
                     size="small"
                     onChange={handleWattsChange}
                 />
