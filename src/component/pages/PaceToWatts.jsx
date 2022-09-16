@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box'
+import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
@@ -53,7 +53,7 @@ const PaceTo = () => {
 
     useEffect(() => {
         setWatts((2.80 / ((minutes * 60 + seconds + tenths * 0.1) / 500) ** 3).toFixed(1));
-    })
+    });
 
     return (
         <>
@@ -137,7 +137,7 @@ const WattsTo = () => {
         let s = 500 * (2.8 / watts) ** (1/3);
         setMinutes(Math.floor(s / 60));
         s = Math.round(Math.floor((s % 60) * 10))/10;
-        if ( s < 1 ) {
+        if (s < 1) {
             s = "0" + String(s);
         }
         setSeconds(s);

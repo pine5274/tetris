@@ -35,6 +35,17 @@ const IndexList = () => {
                         <ListItemText primary={'Pace to Watts'} />
                     </ListItemButton>
                 </ListItem>
+                <ListItem key={'Ergo Prediction'} disablePadding>
+                    <ListItemButton
+                        component={Link}
+                        to={`${ROUTE}/ergo-prediction`}
+                    >
+                        <ListItemIcon>
+                            <SettingsIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={'Ergo Prediction'} />
+                    </ListItemButton>
+                </ListItem>
             </List>
         </>
     )
