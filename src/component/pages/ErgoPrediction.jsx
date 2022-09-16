@@ -24,16 +24,16 @@ const ErgoPrediction = () => {
     const [rows, setRows] = useState([]);
 
     const handleMinutesChange = (e) => {
-        setMinutes(Number(e.target.value));
+        setMinutes(e.target.value);
     }
     const handleSecondsChange = (e) => {
-        setSeconds(Number(e.target.value));
+        setSeconds(e.target.value);
     }
     const handleTenthsChange = (e) => {
-        setTenths(Number(e.target.value));
+        setTenths(e.target.value);
     }
     const handleDistanceChange = (e) => {
-        setDistance(Number(e.target.value));
+        setDistance(e.target.value);
     }
 
     const races = [1000, 2000, 6000];
@@ -87,9 +87,7 @@ const ErgoPrediction = () => {
                         id="minutes"
                         sx={{ m: 1, width: '6ch' }}
                         value={minutes}
-                        InputProps={{
-                            inputMode: "decimal"
-                        }}
+                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
                         size="small"
                         onChange={handleMinutesChange}
                     />
@@ -105,9 +103,7 @@ const ErgoPrediction = () => {
                         id="seconds"
                         sx={{ m: 1, width: '6ch' }}
                         value={seconds}
-                        InputProps={{
-                            inputMode: "decimal"
-                        }}
+                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
                         size="small"
                         onChange={handleSecondsChange}
                     />
@@ -123,9 +119,7 @@ const ErgoPrediction = () => {
                         id="tenths"
                         sx={{ m: 1, width: '6ch' }}
                         value={tenths}
-                        InputProps={{
-                            inputMode: "decimal",
-                        }}
+                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
                         size="small"
                         onChange={handleTenthsChange}
                     />
@@ -143,10 +137,7 @@ const ErgoPrediction = () => {
                         id="minutes"
                         sx={{ m: 1, width: '18ch' }}
                         value={distance}
-                        InputProps={{
-                            // endAdornment: <InputAdornment position="start">m</InputAdornment>,
-                            inputMode: "decimal"
-                        }}
+                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
                         size="small"
                         onChange={handleDistanceChange}
                     />
