@@ -5,8 +5,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import SettingsIcon from '@mui/icons-material/Settings';
-import TransferWithinAStationIcon from '@mui/icons-material/TransferWithinAStation';
+import BuildIcon from '@mui/icons-material/Build';
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import FlagIcon from '@mui/icons-material/Flag';
 
 const IndexList = () => {
     const ROUTE = '/rowing-calculator';
@@ -19,7 +20,7 @@ const IndexList = () => {
                         to={`${ROUTE}/gearing-ratio`}
                     >
                         <ListItemIcon>
-                            <SettingsIcon />
+                            <BuildIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Gearing Ratio'} />
                     </ListItemButton>
@@ -30,7 +31,7 @@ const IndexList = () => {
                         to={`${ROUTE}/pace-to-watts`}
                     >
                         <ListItemIcon>
-                            <TransferWithinAStationIcon />
+                            <SyncAltIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Pace to Watts'} />
                     </ListItemButton>
@@ -41,7 +42,7 @@ const IndexList = () => {
                         to={`${ROUTE}/ergo-prediction`}
                     >
                         <ListItemIcon>
-                            <SettingsIcon />
+                            <FlagIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Ergo Prediction'} />
                     </ListItemButton>

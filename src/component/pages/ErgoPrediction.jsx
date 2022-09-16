@@ -149,7 +149,7 @@ const ErgoPrediction = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <TableContainer sx={{ maxWidth: 650 }} component={Paper}>
+                <TableContainer sx={{ mt: 3, maxWidth: 500 }} component={Paper}>
                     <Table aria-label="ergo predict table">
                         <TableHead>
                         <TableRow>
