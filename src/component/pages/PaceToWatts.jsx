@@ -53,7 +53,7 @@ const PaceTo = () => {
 
     useEffect(() => {
         setWatts((2.80 / ((minutes * 60 + seconds + tenths * 0.1) / 500) ** 3).toFixed(1));
-    });
+    }, [minutes, seconds, tenths]);
 
     return (
         <>
@@ -141,7 +141,7 @@ const WattsTo = () => {
             s = "0" + String(s);
         }
         setSeconds(s);
-    })
+    }, [watts]);
 
     return (
         <>

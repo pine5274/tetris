@@ -65,7 +65,7 @@ const ScullingGearRatio = () => {
             const overLap = inboard * 2 - span;
             setOverLap(overLap.toFixed(1));
         }	
-    })
+    }, [span, oarLength, inboard]);
 
     const handleSpanChange = (e) => {
         setSpan(e.target.value);
@@ -144,7 +144,7 @@ const SweepGearRatio = () => {
             const overLap = inboard - spread;
             setOverLap(overLap.toFixed(1));
         }	
-    })
+    }, [spread, oarLength, inboard]);
 
     const handleSpreadChange = (e) => {
         setSpread(e.target.value);
