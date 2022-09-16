@@ -52,7 +52,7 @@ const PaceTo = () => {
     }
 
     useEffect(() => {
-        setWatts((2.80 / ((minutes * 60 + seconds + tenths * 0.1) / 500) ** 3).toFixed(1));
+        setWatts((2.80 / ((Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1) / 500) ** 3).toFixed(1));
     }, [minutes, seconds, tenths]);
 
     return (
@@ -134,7 +134,7 @@ const WattsTo = () => {
     }
 
     useEffect(() => {
-        let s = 500 * (2.8 / watts) ** (1/3);
+        let s = 500 * (2.8 / Number(watts)) ** (1/3);
         setMinutes(Math.floor(s / 60));
         s = Math.round(Math.floor((s % 60) * 10))/10;
         if (s < 1) {

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -39,7 +37,7 @@ const ErgoPrediction = () => {
     const races = [1000, 2000, 6000];
 
     const predictRacePace = (race) => {
-        const time = (minutes * 60 + seconds + tenths * 0.1) * (race / distance) ** (1/18);
+        const time = (Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1) * (race / Number(distance)) ** (1/18);
         const mm = String(Math.floor(time / 60));
         let ss = Math.round(Math.floor((time % 60) * 10))/10;
         if (ss < 1) {
@@ -52,8 +50,7 @@ const ErgoPrediction = () => {
     }
 
     const predictRaceTime = (race) => {
-        const time = (race/500)*(minutes * 60 + seconds + tenths * 0.1) * (race / distance) ** (1/18);
-        console.log(race, minutes, seconds, tenths, time);
+        const time = (race/500)*(Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1) * (race / Number(distance)) ** (1/18);
         const mm = String(Math.floor(time / 60));
         let ss = Math.round(Math.floor((time % 60) * 10))/10;
         if (ss < 1) {

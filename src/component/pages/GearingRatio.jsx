@@ -60,9 +60,9 @@ const ScullingGearRatio = () => {
         if (span <= 0) {
             setGearingRation('');
         } else {
-            const gearingRatio = (oarLength - inboard) / (span/2);
+            const gearingRatio = (Number(oarLength) - Number(inboard)) / (Number(span)/2);
             setGearingRation(gearingRatio.toFixed(3));
-            const overLap = inboard * 2 - span;
+            const overLap = Number(inboard) * 2 - Number(span);
             setOverLap(overLap.toFixed(1));
         }	
     }, [span, oarLength, inboard]);
@@ -139,9 +139,9 @@ const SweepGearRatio = () => {
         if (spread <= 0) {
             setGearingRation('');
         } else {
-            const gearingRatio = (oarLength - inboard) / spread;
+            const gearingRatio = (Number(oarLength) - Number(inboard)) / Number(spread);
             setGearingRation(gearingRatio.toFixed(3));
-            const overLap = inboard - spread;
+            const overLap = Number(inboard) - Number(spread);
             setOverLap(overLap.toFixed(1));
         }	
     }, [spread, oarLength, inboard]);
