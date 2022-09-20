@@ -9,6 +9,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function createData(race, pace, result) {
     return { race, pace, result};
@@ -158,7 +163,7 @@ const ErgoPrediction = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <TableContainer sx={{ mt: 3, maxWidth: 400 }} component={Paper}>
+                <TableContainer sx={{ my: 3, maxWidth: 400 }} component={Paper}>
                     <Table size="small" aria-label="ergo predict table">
                         <TableHead>
                         <TableRow>
@@ -183,6 +188,36 @@ const ErgoPrediction = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <Divider />
+                <div>
+                    <Accordion sx={{ mt: 5,}}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography>Formulas Used</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography 
+                                sx={{ color: 'caption.main', mb: 1,}}
+                                variant="body2"
+                                component="div"
+                            >
+                                Predict Pace = target_pace * (distance / target_distance) ^(1/18)
+                            </Typography>
+                            <Typography 
+                                sx={{ color: 'caption.main', }}
+                                variant="body2"
+                                component="div"
+                            >
+                                For example:
+                                <br></br>
+                                If your personal best 2000tt is 1:45 [/500m], predict 6000tt pace is calculated as (105*(6000/2000)^(1/18)), which equals 111.6 [s/500m]
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
             </Box>
         </>
     )
