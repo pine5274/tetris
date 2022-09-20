@@ -10,8 +10,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(race, pace, time) {
-    return { race, pace, time };
+function createData(race, pace, result) {
+    return { race, pace, result};
 }
 
 const ErgoPrediction = () => {
@@ -34,13 +34,13 @@ const ErgoPrediction = () => {
         setDistance(e.target.value);
     }
 
-    const races = [1000, 2000, 6000];
+    const timeTrial = [1000, 2000, 6000];
+    const distanceTrial = [1800, 3600];
 
-    const predictRacePace = (race) => {
-        const time = (Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1) * (race / Number(distance)) ** (1/18);
+    const convertTimeToMMSS = (time) => {
         const mm = String(Math.floor(time / 60));
-        let ss = Math.round(Math.floor((time % 60) * 10))/10;
-        if (ss < 1) {
+        let ss = (time % 60).toFixed(1);
+        if (ss < 10) {
             ss = "0" + String(ss);
         } else {
             ss = String(ss);
@@ -49,26 +49,38 @@ const ErgoPrediction = () => {
         return `${mm}:${ss}`;
     }
 
-    const predictRaceTime = (race) => {
-        const time = (race/500)*(Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1) * (race / Number(distance)) ** (1/18);
-        const mm = String(Math.floor(time / 60));
-        let ss = Math.round(Math.floor((time % 60) * 10))/10;
-        if (ss < 1) {
-            ss = "0" + String(ss);
-        } else {
-            ss = String(ss);
-        }
-
-        return `${mm}:${ss}`;
+    const predictTTPace = (race) => {
+        const target_seconds = Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
+        const time = target_seconds * (race / Number(distance)) ** (1/18);
+        return convertTimeToMMSS(time);
     }
 
+    const predictTTResult = (race) => {
+        const target_seconds = Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
+        const time = (race/500)*target_seconds * (race / Number(distance)) ** (1/18);
+        return convertTimeToMMSS(time);
+    }
 
+    const predictDTPace = (race) => {
+        const target_seconds = 4 * (Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1);
+        const time = race / ((Number(distance) / 500) * (race / target_seconds) ** (17/18));
+        return convertTimeToMMSS(time);
+    }
+
+    const predictDTResult = (race) => {
+        const target_seconds = 4 * (Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1);
+        const time = (race / ((Number(distance) / 500) * (race / target_seconds) ** (17/18)));
+        return `${(500 * race / time).toFixed(1)}m`;
+    }
     
     useEffect(() => {
-        const array = races.map((race) => {
-            return createData(String(race) + 'm', predictRacePace(race), predictRaceTime(race));
+        const tt = timeTrial.map((race) => {
+            return createData(`${(race)}m`, predictTTPace(race), predictTTResult(race));
         });
-        setRows(array);
+        const dt = distanceTrial.map((race) => {
+            return createData(`${race/60}min`, predictDTPace(race), predictDTResult(race));
+        });
+        setRows([...tt, ...dt]);
     }, [minutes, seconds, tenths, distance]);
 
     return (
@@ -146,13 +158,13 @@ const ErgoPrediction = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <TableContainer sx={{ mt: 3, maxWidth: 500 }} component={Paper}>
-                    <Table aria-label="ergo predict table">
+                <TableContainer sx={{ mt: 3, maxWidth: 400 }} component={Paper}>
+                    <Table size="small" aria-label="ergo predict table">
                         <TableHead>
                         <TableRow>
                             <TableCell>Race</TableCell>
                             <TableCell align="right">Predict Pace&nbsp;(/500m)</TableCell>
-                            <TableCell align="right">Predict Time&nbsp;</TableCell>
+                            <TableCell align="right">Predict result&nbsp;</TableCell>
                         </TableRow>
                         </TableHead>
                         <TableBody>
@@ -165,7 +177,7 @@ const ErgoPrediction = () => {
                                 {row.race}
                             </TableCell>
                             <TableCell align="right">{row.pace}</TableCell>
-                            <TableCell align="right">{row.time}</TableCell>
+                            <TableCell align="right">{row.result}</TableCell>
                             </TableRow>
                         ))}
                         </TableBody>
