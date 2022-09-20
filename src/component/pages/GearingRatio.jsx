@@ -223,7 +223,7 @@ const ScullingExample = () => {
 
     const rows = getScullingExample().map((x) => {
         return createData(x.Scull, x.Span, x.OarLength, x.Inboard, x.Outboard, x.Overlap, x.GearingRatio)
-    })
+    });
 
     return (
         <TableContainer component={Paper}>

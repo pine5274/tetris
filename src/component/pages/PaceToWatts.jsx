@@ -136,8 +136,8 @@ const WattsTo = () => {
     useEffect(() => {
         let s = 500 * (2.8 / Number(watts)) ** (1/3);
         setMinutes(Math.floor(s / 60));
-        s = Math.round(Math.floor((s % 60) * 10))/10;
-        if (s < 1) {
+        s = (s % 60).toFixed(1);
+        if (s < 10) {
             s = "0" + String(s);
         }
         setSeconds(s);

@@ -38,7 +38,7 @@ const ErgoPrediction = () => {
     const distanceTrial = [1800, 3600];
 
     const convertTimeToMMSS = (time) => {
-        const mm = String(Math.floor(time / 60));
+        const mm = `${Math.floor(time / 60)}`;
         let ss = (time % 60).toFixed(1);
         if (ss < 10) {
             ss = "0" + String(ss);
