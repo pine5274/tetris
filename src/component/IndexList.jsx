@@ -8,6 +8,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import BuildIcon from '@mui/icons-material/Build';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import FlagIcon from '@mui/icons-material/Flag';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 const IndexList = () => {
     const ROUTE = '/rowing-calculator';
@@ -45,6 +46,17 @@ const IndexList = () => {
                             <FlagIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Ergo Prediction'} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem key={'Weight Adjustment'} disablePadding>
+                    <ListItemButton
+                        component={Link}
+                        to={`${ROUTE}/weight-adjustment`}
+                    >
+                        <ListItemIcon>
+                            <ManageAccountsIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={'Weight Adjustment'} />
                     </ListItemButton>
                 </ListItem>
             </List>

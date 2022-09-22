@@ -9,6 +9,7 @@ import Index from './component/pages/Index';
 import GearRatio from './component/pages/GearingRatio';
 import PaceToWatts from './component/pages/PaceToWatts';
 import ErgoPrediction from './component/pages/ErgoPrediction';
+import WeightAdjustment from './component/pages/WeightAdjustment';
 import NoMatch from './component/pages/NoMatch';
 import { getPalette } from './data/palette';
 
@@ -33,6 +34,7 @@ function App() {
 								<Route path={`${ROUTE}/gearing-ratio`} element={<GearRatio />} />
 								<Route path={`${ROUTE}/pace-to-watts`} element={<PaceToWatts />} />
 								<Route path={`${ROUTE}/ergo-prediction`} element={<ErgoPrediction />} />
+								<Route path={`${ROUTE}/weight-adjustment`} element={<WeightAdjustment />} />
 								<Route path="*" element={<NoMatch />} />
 							</Routes>
 					</Box>	
