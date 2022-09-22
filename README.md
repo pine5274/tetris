@@ -1,5 +1,6 @@
 # rowing-calculator
 
-> yarn run dev
-
-> yarn deploy
+## contents
+- Gearing Ration
+- pace to Watts
+- Ergo Prediction
