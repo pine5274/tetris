@@ -113,7 +113,6 @@ const ErgoPrediction = () => {
                         </Typography>
                     </Box>
                     <TextField
-                        // label="sec"
                         id="seconds"
                         sx={{ m: 1, width: '6ch' }}
                         value={seconds}
@@ -129,7 +128,6 @@ const ErgoPrediction = () => {
                         </Typography>
                     </Box>
                     <TextField
-                        // label="dec"
                         id="tenths"
                         sx={{ m: 1, width: '6ch' }}
                         value={tenths}
@@ -149,7 +147,7 @@ const ErgoPrediction = () => {
                     <TextField
                         label="distance"
                         id="minutes"
-                        sx={{ m: 1, width: '18ch' }}
+                        sx={{ m: 1, width: '12ch' }}
                         value={distance}
                         inputProps={{ inputMode: 'numeric', type: 'tel', }}
                         size="small"
