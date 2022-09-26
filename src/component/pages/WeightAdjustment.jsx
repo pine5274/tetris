@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import ManIcon from '@mui/icons-material/Man';
 import WomanIcon from '@mui/icons-material/Woman';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Divider from '@mui/material/Divider';
+import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
+
 
 const WeightAdjustment = () => {
     const [minutes, setMinutes] = useState(1);
@@ -157,6 +159,25 @@ const WeightAdjustment = () => {
                 <h2>
                     Adjustment Pace: {adjust} /500m
                 </h2>
+                {/* <Divider />
+                <Paper sx={{ p: 2, mt: 4, }}>
+                    <Typography 
+                        sx={{ color: 'caption.main', }}
+                        variant="body2"
+                        component="div"
+                    >
+                        pace = ³√(2.80/watts)
+                    </Typography>
+                    <Typography 
+                        sx={{ color: 'caption.main', }}
+                        variant="body2"
+                        component="div"
+                    >
+                    <Link href="https://www.concept2.com/indoor-rowers/training/calculators/watts-calculator">
+                        concept2 watts-calculator
+                    </Link>
+                    </Typography>
+                </Paper> */}
             </Box>
         </>
     )
