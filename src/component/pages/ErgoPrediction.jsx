@@ -42,6 +42,10 @@ const ErgoPrediction = () => {
     const timeTrial = [1000, 2000, 6000];
     const distanceTrial = [1800, 3600];
 
+    const getPace = () => {
+        return Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
+    }
+
     const convertTimeToMMSS = (time) => {
         const mm = `${Math.floor(time / 60)}`;
         let ss = (time % 60).toFixed(1);
@@ -55,25 +59,23 @@ const ErgoPrediction = () => {
     }
 
     const predictTTPace = (race) => {
-        const target_seconds = Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
-        const time = target_seconds * (race / Number(distance)) ** (1/18);
+        const time =  getPace() * (race / Number(distance)) ** (1/18);
         return convertTimeToMMSS(time);
     }
 
     const predictTTResult = (race) => {
-        const target_seconds = Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
-        const time = (race/500)*target_seconds * (race / Number(distance)) ** (1/18);
+        const time = (race/500)* getPace() * (race / Number(distance)) ** (1/18);
         return convertTimeToMMSS(time);
     }
 
     const predictDTPace = (race) => {
-        const target_seconds = 4 * (Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1);
+        const target_seconds = 4 * getPace();
         const time = race / ((Number(distance) / 500) * (race / target_seconds) ** (17/18));
         return convertTimeToMMSS(time);
     }
 
     const predictDTResult = (race) => {
-        const target_seconds = 4 * (Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1);
+        const target_seconds = 4 * getPace();
         const time = (race / ((Number(distance) / 500) * (race / target_seconds) ** (17/18)));
         return `${(500 * race / time).toFixed(1)}m`;
     }
