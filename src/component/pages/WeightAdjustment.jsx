@@ -6,13 +6,17 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import ManIcon from '@mui/icons-material/Man';
 import WomanIcon from '@mui/icons-material/Woman';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const WeightAdjustment = () => {
     const [minutes, setMinutes] = useState(1);
     const [seconds, setSeconds] = useState(45);
     const [tenths, setTenths] = useState(0);
     const [weight, setWeight] = useState(75);
+    const [standardWeight, setStandardWeight] = useState(75);
     const [adjust, setAdjust] = useState('1:45.0');
+    const [alignment, setAlignment] = useState('left');
 
     const handleMinutesChange = (e) => {
         setMinutes(e.target.value);
@@ -27,14 +31,21 @@ const WeightAdjustment = () => {
         setWeight(e.target.value);
     }
 
-    const STANDARD_WEIGHT = 75;
+    const handleAlignment = (event, newAlignment) => {
+        setAlignment(newAlignment);
+        if (newAlignment === 'left') {
+            setStandardWeight(75);
+        } else {
+            setStandardWeight(60);
+        }
+    };
 
     useEffect(() => {
         setAdjust(convertTimeToMMSS(adjustPace(getPace())));
-    }, [minutes, seconds, tenths, weight]);
+    }, [minutes, seconds, tenths, weight, standardWeight]);
 
     const adjustPace = (pace) => {
-        return pace * (((STANDARD_WEIGHT + 22) / (Number(weight) + 22)) ** (-2/9));
+        return pace * (((standardWeight + 22) / (Number(weight) + 22)) ** (-2/9));
     }
 
     const getPace = () => {
@@ -60,20 +71,22 @@ const WeightAdjustment = () => {
                 Enter your body weight and either the time (for a distance piece) or distance (for a timed piece) and then click Calculate.
             </Typography>
             <Box sx={{ p: 3 }}>
-                {/* <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        '& > *': {
-                        m: 1,
-                        },
-                    }}
+                <ToggleButtonGroup
+                    sx={{ mx: 1, mb: 3, width: '20ch', }}
+                    color="primary"
+                    value={alignment}
+                    exclusive
+                    onChange={handleAlignment}
+                    size="small"
+                    aria-label="text alignment"
                 >
-                    <ButtonGroup variant="outlined" aria-label="outlined button group">
-                        <Button startIcon={<ManIcon />}>Man</Button>
-                        <Button startIcon={<WomanIcon/>} >Woman</Button>
-                    </ButtonGroup>
-                </Box> */}
+                    <ToggleButton sx={{ width: '100%', }} value="left" aria-label="left aligned">
+                        <ManIcon />Man
+                    </ToggleButton>
+                    <ToggleButton sx={{ width: '100%', }} value="right" aria-label="right aligned">
+                        <WomanIcon />Woman
+                    </ToggleButton>
+                </ToggleButtonGroup>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
                     <TextField
                         label="pace"
