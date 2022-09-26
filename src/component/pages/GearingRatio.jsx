@@ -69,13 +69,13 @@ const ScullingGearRatio = () => {
 
     const handleSpanChange = (e) => {
         setSpan(e.target.value);
-    }
+    };
     const handleOarLengthChange = (e) => {
         setOarLength(e.target.value);
-    }
+    };
     const handleInboardChange = (e) => {
         setInboard(e.target.value);
-    }
+    };
 
     return (
         <>
@@ -148,13 +148,13 @@ const SweepGearRatio = () => {
 
     const handleSpreadChange = (e) => {
         setSpread(e.target.value);
-    }
+    };
     const handleOarLengthChange = (e) => {
         setOarLength(e.target.value);
-    }
+    };
     const handleInboardChange = (e) => {
         setInboard(e.target.value);
-    }
+    };
 
     return (
         <>

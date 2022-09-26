@@ -43,13 +43,13 @@ const PaceTo = () => {
   
     const handleMinutesChange = (e) => {
         setMinutes(e.target.value);
-    }
+    };
     const handleSecondsChange = (e) => {
         setSeconds(e.target.value);
-    }
+    };
     const handleTenthsChange = (e) => {
         setTenths(e.target.value);
-    }
+    };
 
     useEffect(() => {
         setWatts((2.80 / ((Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1) / 500) ** 3).toFixed(1));
@@ -136,7 +136,7 @@ const WattsTo = () => {
   
     const handleWattsChange = (e) => {
         setWatts(e.target.value);
-    }
+    };
 
     useEffect(() => {
         let s = 500 * (2.8 / Number(watts)) ** (1/3);

@@ -20,16 +20,16 @@ const WeightAdjustment = () => {
 
     const handleMinutesChange = (e) => {
         setMinutes(e.target.value);
-    }
+    };
     const handleSecondsChange = (e) => {
         setSeconds(e.target.value);
-    }
+    };
     const handleTenthsChange = (e) => {
         setTenths(e.target.value);
-    }
+    };
     const handleWeightChange = (e) => {
         setWeight(e.target.value);
-    }
+    };
 
     const handleAlignment = (event, newAlignment) => {
         setAlignment(newAlignment);
@@ -40,18 +40,15 @@ const WeightAdjustment = () => {
         }
     };
 
-    useEffect(() => {
-        setAdjust(convertTimeToMMSS(adjustPace(getPace())));
-    }, [minutes, seconds, tenths, weight, standardWeight]);
-
+    
     const adjustPace = (pace) => {
         return pace * (((standardWeight + 22) / (Number(weight) + 22)) ** (-2/9));
-    }
-
+    };
+    
     const getPace = () => {
         return Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
-    }
-
+    };
+    
     const convertTimeToMMSS = (time) => {
         const mm = `${Math.floor(time / 60)}`;
         let ss = (time % 60).toFixed(1);
@@ -60,10 +57,14 @@ const WeightAdjustment = () => {
         } else {
             ss = String(ss);
         }
-
+        
         return `${mm}:${ss}`;
     }
 
+    useEffect(() => {
+        setAdjust(convertTimeToMMSS(adjustPace(getPace())));
+    }, [minutes, seconds, tenths, weight, standardWeight]);
+    
     return (
         <>
             <h1>Weight Adjustment</h1>
@@ -154,7 +155,7 @@ const WeightAdjustment = () => {
                     </Box>
                 </Box>
                 <h2>
-                    Adjustment Score: {adjust}
+                    Adjustment Pace: {adjust} /500m
                 </h2>
             </Box>
         </>

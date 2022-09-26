@@ -28,23 +28,23 @@ const ErgoPrediction = () => {
 
     const handleMinutesChange = (e) => {
         setMinutes(e.target.value);
-    }
+    };
     const handleSecondsChange = (e) => {
         setSeconds(e.target.value);
-    }
+    };
     const handleTenthsChange = (e) => {
         setTenths(e.target.value);
-    }
+    };
     const handleDistanceChange = (e) => {
         setDistance(e.target.value);
-    }
+    };
 
     const timeTrial = [1000, 2000, 6000];
     const distanceTrial = [1800, 3600];
 
     const getPace = () => {
         return Number(minutes) * 60 + Number(seconds) + Number(tenths) * 0.1;
-    }
+    };
 
     const convertTimeToMMSS = (time) => {
         const mm = `${Math.floor(time / 60)}`;
@@ -56,29 +56,29 @@ const ErgoPrediction = () => {
         }
 
         return `${mm}:${ss}`;
-    }
+    };
 
     const predictTTPace = (race) => {
         const time =  getPace() * (race / Number(distance)) ** (1/18);
         return convertTimeToMMSS(time);
-    }
+    };
 
     const predictTTResult = (race) => {
         const time = (race/500)* getPace() * (race / Number(distance)) ** (1/18);
         return convertTimeToMMSS(time);
-    }
+    };
 
     const predictDTPace = (race) => {
         const target_seconds = 4 * getPace();
         const time = race / ((Number(distance) / 500) * (race / target_seconds) ** (17/18));
         return convertTimeToMMSS(time);
-    }
+    };
 
     const predictDTResult = (race) => {
         const target_seconds = 4 * getPace();
         const time = (race / ((Number(distance) / 500) * (race / target_seconds) ** (17/18)));
         return `${(500 * race / time).toFixed(1)}m`;
-    }
+    };
     
     useEffect(() => {
         const tt = timeTrial.map((race) => {
@@ -189,35 +189,33 @@ const ErgoPrediction = () => {
                     </Table>
                 </TableContainer>
                 <Divider />
-                <div>
-                    <Accordion sx={{ mt: 5,}}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
+                <Accordion sx={{ mt: 5,}}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>Formulas Used</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography 
+                            sx={{ color: 'caption.main', mb: 1,}}
+                            variant="body2"
+                            component="div"
                         >
-                            <Typography>Formulas Used</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography 
-                                sx={{ color: 'caption.main', mb: 1,}}
-                                variant="body2"
-                                component="div"
-                            >
-                                Predict Pace = target_pace * (distance / target_distance) ^(1/18)
-                            </Typography>
-                            <Typography 
-                                sx={{ color: 'caption.main', }}
-                                variant="body2"
-                                component="div"
-                            >
-                                For example:
-                                <br></br>
-                                If your personal best 2000tt is 1:45 [/500m], predict 6000tt pace is calculated as (105*(6000/2000)^(1/18)), which equals 111.6 [s/500m]
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                </div>
+                            Predict Pace = target_pace * (distance / target_distance) ^(1/18)
+                        </Typography>
+                        <Typography 
+                            sx={{ color: 'caption.main', }}
+                            variant="body2"
+                            component="div"
+                        >
+                            For example:
+                            <br></br>
+                            If your personal best 2000tt is 1:45 [/500m], predict 6000tt pace is calculated as (105*(6000/2000)^(1/18)), which equals 111.6 [s/500m]
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
             </Box>
         </>
     )
