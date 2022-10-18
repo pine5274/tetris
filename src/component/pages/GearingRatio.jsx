@@ -128,16 +128,17 @@ const ScullingGearRatio = () => {
             <h2>
                 Over Lap: {overLap}
             </h2>
-            <Box sx={{ m: 1}}>
+            <Box sx={{ display: 'flex',}}>
                 <Button 
+                    sx={{ m: 2, ml: "auto",}}
                     variant="contained"
                     endIcon={<LibraryAddIcon />}    
                     onClick={saveChoice}
                 >
                     Save
                 </Button>
-                <ChoseTable choices={choices} />
             </Box>
+            <ChoseTable choices={choices} />
             <Divider />
             <h3>
                 Sculling Example
@@ -168,7 +169,7 @@ const ChoseTable = (props) => {
     });
 
     return (
-        <TableContainer component={Paper} sx={{my:3, maxWidth: 1000 }}>
+        <TableContainer component={Paper} sx={{my:2, maxWidth: 1000 }}>
             <Table sx={{ minWidth: 350 }} size="small" aria-label="sculling chose table">
                 <TableHead>
                     <TableRow>
@@ -274,16 +275,17 @@ const SweepGearRatio = () => {
             <h2>
                 Over Lap: {overLap}
             </h2>
-            <Box sx={{ m: 1}}>
+            <Box sx={{ display: 'flex',}}>
                 <Button 
+                    sx={{ m: 2, ml: "auto",}}
                     variant="contained"
                     endIcon={<LibraryAddIcon />}    
                     onClick={saveChoice}
                 >
                     Save
                 </Button>
-                <ChoseTable choices={choices} />
             </Box>
+            <ChoseTable choices={choices} />
             <Divider />
             <h3>
                 Sweep Example
