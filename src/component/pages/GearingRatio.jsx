@@ -8,6 +8,8 @@ import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
+import Button from '@mui/material/Button';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -56,6 +58,8 @@ const ScullingGearRatio = () => {
     const [inboard, setInboard] = useState(88);
     const [gearingRatio, setGearingRation] = useState(0);
     const [overLap, setOverLap] = useState(0);
+    const [choices, setChoices] = useState([]);
+
     useEffect(() => {
         if (span <= 0) {
             setGearingRation('');
@@ -75,6 +79,10 @@ const ScullingGearRatio = () => {
     };
     const handleInboardChange = (e) => {
         setInboard(e.target.value);
+    };
+    const saveChoice = () => {
+        const choice = {span: span, oarLength: oarLength, inboard: inboard, overLap: overLap, gearingRatio: gearingRatio};
+        setChoices([...choices, choice]);
     };
 
     return (
@@ -120,6 +128,16 @@ const ScullingGearRatio = () => {
             <h2>
                 Over Lap: {overLap}
             </h2>
+            <Box sx={{ m: 1}}>
+                <Button 
+                    variant="contained"
+                    endIcon={<LibraryAddIcon />}    
+                    onClick={saveChoice}
+                >
+                    Save
+                </Button>
+                <ChoseTable choices={choices} />
+            </Box>
             <Divider />
             <h3>
                 Sculling Example
@@ -129,12 +147,65 @@ const ScullingGearRatio = () => {
       );
 }
 
+const ChoseTable = (props) => {
+    if (props.choices.length === 0) {
+        return;
+    }
+
+    function createData(
+        id,
+        span,
+        length,
+        inboard,
+        overlap,
+        gearingRatio
+    ) {
+        return { id, span, length, inboard, overlap, gearingRatio };
+    }
+
+    const rows = props.choices.map((x, index) => {
+        return createData(index, x.span, x.oarLength, x.inboard, x.overLap, x.gearingRatio)
+    });
+
+    return (
+        <TableContainer component={Paper} sx={{my:3, maxWidth: 1000 }}>
+            <Table sx={{ minWidth: 350 }} size="small" aria-label="sculling chose table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="right">Span<br></br>Spread</TableCell>
+                        <TableCell align="right">Oar<br></br>Length</TableCell>
+                        <TableCell align="right">Inboard</TableCell>
+                        <TableCell align="right">OveLap</TableCell>
+                        <TableCell align="right">Gearing<br></br>Ration</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                {rows.map((row) => (
+                    <TableRow
+                        key={row.id}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                        <TableCell align="right">{row.span}</TableCell>
+                        <TableCell align="right">{row.length}</TableCell>
+                        <TableCell align="right">{row.inboard}</TableCell>
+                        <TableCell align="right">{row.overlap}</TableCell>
+                        <TableCell align="right">{row.gearingRatio}</TableCell>
+                    </TableRow>
+                ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    );
+};
+
 const SweepGearRatio = () => {
     const [spread, setSpread] = useState(87);
     const [oarLength, setOarLength] = useState(374);
     const [inboard, setInboard] = useState(117);
     const [gearingRatio, setGearingRation] = useState(0);
     const [overLap, setOverLap] = useState(0);
+    const [choices, setChoices] = useState([]);
+
     useEffect(() => {
         if (spread <= 0) {
             setGearingRation('');
@@ -154,6 +225,10 @@ const SweepGearRatio = () => {
     };
     const handleInboardChange = (e) => {
         setInboard(e.target.value);
+    };
+    const saveChoice = () => {
+        const choice = {span: spread, oarLength: oarLength, inboard: inboard, overLap: overLap, gearingRatio: gearingRatio};
+        setChoices([...choices, choice]);
     };
 
     return (
@@ -199,14 +274,24 @@ const SweepGearRatio = () => {
             <h2>
                 Over Lap: {overLap}
             </h2>
+            <Box sx={{ m: 1}}>
+                <Button 
+                    variant="contained"
+                    endIcon={<LibraryAddIcon />}    
+                    onClick={saveChoice}
+                >
+                    Save
+                </Button>
+                <ChoseTable choices={choices} />
+            </Box>
             <Divider />
             <h3>
                 Sweep Example
             </h3>
             <SweepExample />
         </>
-      );
-}
+    );
+};
 
 const ScullingExample = () => {
     function createData(
@@ -267,7 +352,7 @@ const ScullingExample = () => {
             </Table>
         </TableContainer>
     )
-}
+};
 
 const SweepExample = () => {
     function createData(
@@ -334,7 +419,7 @@ const SweepExample = () => {
             </Table>
         </TableContainer>
     )
-}
+};
 
 const GearRatio = () => {
 	const [value, setValue] = React.useState(0);
@@ -365,6 +450,6 @@ const GearRatio = () => {
 			</Box>
         </>
 	);
-}
+};
 
 export default GearRatio;
