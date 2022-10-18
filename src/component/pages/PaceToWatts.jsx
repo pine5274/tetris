@@ -57,54 +57,54 @@ const PaceTo = () => {
 
     return (
         <>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                    <TextField
-                        label="pace"
-                        id="minutes"
-                        sx={{ m: 1, width: '6ch' }}
-                        value={minutes}
-                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
-                        size="small"
-                        onChange={handleMinutesChange}
-                    />
-                    <Box
-                        sx={{ display: 'flex', alignItems: 'center', }}
-                    >
-                        <Typography variant="h5" component="div">
-                            :
-                        </Typography>
-                    </Box>
-                    <TextField
-                        id="seconds"
-                        sx={{ m: 1, width: '6ch' }}
-                        value={seconds}
-                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
-                        size="small"
-                        onChange={handleSecondsChange}
-                    />
-                    <Box
-                        sx={{ display: 'flex', alignItems: 'center', }}
-                    >
-                        <Typography variant="h5" component="div">
-                            .
-                        </Typography>
-                    </Box>
-                    <TextField
-                        id="tenths"
-                        sx={{ m: 1, width: '6ch' }}
-                        value={tenths}
-                        inputProps={{ inputMode: 'numeric', type: 'tel', }}
-                        size="small"
-                        onChange={handleTenthsChange}
-                    />
-                    <Box
-                        sx={{ mb: 1, display: 'flex', alignItems: 'flex-end', }}
-                    >
-                        <Typography sx={{ color: 'caption.main', }} variant="body1" component="div">
-                            /500m
-                        </Typography>
-                    </Box>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                <TextField
+                    label="pace"
+                    id="minutes"
+                    sx={{ m: 1, width: '6ch' }}
+                    value={minutes}
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
+                    size="small"
+                    onChange={handleMinutesChange}
+                />
+                <Box
+                    sx={{ display: 'flex', alignItems: 'center', }}
+                >
+                    <Typography variant="h5" component="div">
+                        :
+                    </Typography>
                 </Box>
+                <TextField
+                    id="seconds"
+                    sx={{ m: 1, width: '6ch' }}
+                    value={seconds}
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
+                    size="small"
+                    onChange={handleSecondsChange}
+                />
+                <Box
+                    sx={{ display: 'flex', alignItems: 'center', }}
+                >
+                    <Typography variant="h5" component="div">
+                        .
+                    </Typography>
+                </Box>
+                <TextField
+                    id="tenths"
+                    sx={{ m: 1, width: '6ch' }}
+                    value={tenths}
+                    inputProps={{ inputMode: 'numeric', type: 'tel', }}
+                    size="small"
+                    onChange={handleTenthsChange}
+                />
+                <Box
+                    sx={{ mb: 1, display: 'flex', alignItems: 'flex-end', }}
+                >
+                    <Typography sx={{ color: 'caption.main', }} variant="body1" component="div">
+                        /500m
+                    </Typography>
+                </Box>
+            </Box>
             <h2>{watts} watts</h2>
             <Divider />
             <Paper sx={{ p: 2, mt: 4, }}>

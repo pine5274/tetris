@@ -128,7 +128,7 @@ const ScullingGearRatio = () => {
             <h2>
                 Over Lap: {overLap}
             </h2>
-            <Box sx={{ display: 'flex',}}>
+            <Box sx={{ display: 'flex', maxWidth: 1000, }}>
                 <Button 
                     sx={{ m: 2, ml: "auto",}}
                     variant="contained"
@@ -275,7 +275,7 @@ const SweepGearRatio = () => {
             <h2>
                 Over Lap: {overLap}
             </h2>
-            <Box sx={{ display: 'flex',}}>
+            <Box sx={{ display: 'flex', maxWidth: 1000, }}>
                 <Button 
                     sx={{ m: 2, ml: "auto",}}
                     variant="contained"
