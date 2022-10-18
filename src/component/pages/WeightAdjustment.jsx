@@ -70,10 +70,7 @@ const WeightAdjustment = () => {
     return (
         <>
             <h1>Weight Adjustment</h1>
-            <Typography variant="body2">
-                Enter your body weight and either the time (for a distance piece) or distance (for a timed piece) and then click Calculate.
-            </Typography>
-            <Box sx={{ p: 3 }}>
+            <Box sx={{ pt: 3, px: 1, }}>
                 <ToggleButtonGroup
                     sx={{ mx: 1, mb: 3, width: '20ch', }}
                     color="primary"
@@ -138,11 +135,11 @@ const WeightAdjustment = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                <Box sx={{ pt: 2, display: 'flex', flexWrap: 'wrap' }}>
                     <TextField
                         label="weight"
                         id="weight"
-                        sx={{ m: 1, width: '12ch' }}
+                        sx={{ m: 1, width: '10ch' }}
                         value={weight}
                         inputProps={{ inputMode: 'numeric', type: 'tel', }}
                         size="small"

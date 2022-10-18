@@ -29,7 +29,7 @@ function TabPanel(props) {
 			{...other}
 		>
 			{value === index && (
-			<Box sx={{ p: 3 }}>
+			<Box sx={{ p: 1 }}>
 				{children}
 			</Box>
 			)}
@@ -226,7 +226,7 @@ const ScullingExample = () => {
     });
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{ maxWidth: 1000 }}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="sculling table">
                 <caption>
                     cf. High Performance Rowing (John McArthur)
@@ -238,12 +238,12 @@ const ScullingExample = () => {
                 <TableHead>
                     <TableRow>
                         <TableCell>Scull</TableCell>
-                        <TableCell align="right">Span&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Oar&nbsp;Length&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Inboard&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Outboard&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Ove&nbsp;Lap&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Gearing&nbsp;Ration</TableCell>
+                        <TableCell align="right">Span</TableCell>
+                        <TableCell align="right">Oar<br></br>Length</TableCell>
+                        <TableCell align="right">Inboard</TableCell>
+                        <TableCell align="right">Outboard</TableCell>
+                        <TableCell align="right">OveLap</TableCell>
+                        <TableCell align="right">Gearing<br></br>Ration</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -287,7 +287,7 @@ const SweepExample = () => {
     });
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{ maxWidth: 1000 }}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="sweep table">
                 <caption>
                     cf.&nbsp;
@@ -305,12 +305,12 @@ const SweepExample = () => {
                 <TableHead>
                     <TableRow>
                         <TableCell>Sweep</TableCell>
-                        <TableCell align="right">Rigger&nbsp;Spread&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Oar&nbsp;Length&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Inboard&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Outboard&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Ove&nbsp;Lap&nbsp;(cm)</TableCell>
-                        <TableCell align="right">Gearing&nbsp;Ration</TableCell>
+                        <TableCell align="right">Rigger<br></br>Spread</TableCell>
+                        <TableCell align="right">Oar<br></br>Length</TableCell>
+                        <TableCell align="right">Inboard</TableCell>
+                        <TableCell align="right">Outboard</TableCell>
+                        <TableCell align="right">OveLap</TableCell>
+                        <TableCell align="right">Gearing<br></br>Ration</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
