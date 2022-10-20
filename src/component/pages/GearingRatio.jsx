@@ -56,16 +56,16 @@ const ScullingGearRatio = () => {
     const [span, setSpan] = useState(159);
     const [oarLength, setOarLength] = useState(286);
     const [inboard, setInboard] = useState(88);
-    const [gearingRatio, setGearingRation] = useState(0);
+    const [gearingRatio, setGearingRatio] = useState(0);
     const [overLap, setOverLap] = useState(0);
     const [choices, setChoices] = useState([]);
 
     useEffect(() => {
         if (span <= 0) {
-            setGearingRation('');
+            setGearingRatio('');
         } else {
             const gearingRatio = (Number(oarLength) - Number(inboard)) / (Number(span)/2);
-            setGearingRation(gearingRatio.toFixed(3));
+            setGearingRatio(gearingRatio.toFixed(3));
             const overLap = Number(inboard) * 2 - Number(span);
             setOverLap(overLap.toFixed(1));
         }	
@@ -123,7 +123,7 @@ const ScullingGearRatio = () => {
                 />
             </Box>
             <h2>
-                Gearing Ration: {gearingRatio}
+                Gearing Ratio: {gearingRatio}
             </h2>
             <h2>
                 Over Lap: {overLap}
@@ -177,7 +177,7 @@ const ChoseTable = (props) => {
                         <TableCell align="right">Oar<br></br>Length</TableCell>
                         <TableCell align="right">Inboard</TableCell>
                         <TableCell align="right">OveLap</TableCell>
-                        <TableCell align="right">Gearing<br></br>Ration</TableCell>
+                        <TableCell align="right">Gearing<br></br>Ratio</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -203,16 +203,16 @@ const SweepGearRatio = () => {
     const [spread, setSpread] = useState(87);
     const [oarLength, setOarLength] = useState(374);
     const [inboard, setInboard] = useState(117);
-    const [gearingRatio, setGearingRation] = useState(0);
+    const [gearingRatio, setGearingRatio] = useState(0);
     const [overLap, setOverLap] = useState(0);
     const [choices, setChoices] = useState([]);
 
     useEffect(() => {
         if (spread <= 0) {
-            setGearingRation('');
+            setGearingRatio('');
         } else {
             const gearingRatio = (Number(oarLength) - Number(inboard)) / Number(spread);
-            setGearingRation(gearingRatio.toFixed(3));
+            setGearingRatio(gearingRatio.toFixed(3));
             const overLap = Number(inboard) - Number(spread);
             setOverLap(overLap.toFixed(1));
         }	
@@ -270,7 +270,7 @@ const SweepGearRatio = () => {
                 />
             </Box>
             <h2>
-                Gearing Ration: {gearingRatio}
+                Gearing Ratio: {gearingRatio}
             </h2>
             <h2>
                 Over Lap: {overLap}
@@ -330,7 +330,7 @@ const ScullingExample = () => {
                         <TableCell align="right">Inboard</TableCell>
                         <TableCell align="right">Outboard</TableCell>
                         <TableCell align="right">OveLap</TableCell>
-                        <TableCell align="right">Gearing<br></br>Ration</TableCell>
+                        <TableCell align="right">Gearing<br></br>Ratio</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -397,7 +397,7 @@ const SweepExample = () => {
                         <TableCell align="right">Inboard</TableCell>
                         <TableCell align="right">Outboard</TableCell>
                         <TableCell align="right">OveLap</TableCell>
-                        <TableCell align="right">Gearing<br></br>Ration</TableCell>
+                        <TableCell align="right">Gearing<br></br>Ratio</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
