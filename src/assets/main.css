@@ -1,7 +1,12 @@
+.game-board {
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
 .game-block {
     margin: 0;
     padding: 0;
     width: 21px;
     height: 21px;
-    border: 1px solid rgb(200, 226, 255, 0.5);
+    border: 1px solid rgb(200, 226, 255, 0.6);
 }
