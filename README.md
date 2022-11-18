@@ -1,9 +1,9 @@
-# rowing-calculator
+# tetris
 
-## contents
-- Gearing Ration
-- pace to Watts
-- Ergo Prediction
-  - Based on your performance , we have predicted your maximum performance over some common race distances.
-- Weight Adjustment
-  - Enter your body weight and either the time (for a distance piece) or distance (for a timed piece) and then click Calculate.
+インフィニティ　森肥後尾崎高塚玖村大塚今井渡辺　
+COXは後ろ塊は甲斐、前塊は矢井田
+天満　古賀大平川邊松本　
+COXは後ろ塊は矢井田　前塊は甲斐
+アイビス　菊池小山江頭西原
+天りょう　田中柴山竹田新本　COX大玉
+紅霞　藤川

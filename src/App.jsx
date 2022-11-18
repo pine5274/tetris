@@ -2,7 +2,8 @@ import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import { getPalette } from './data/palette';
+import { getPalette } from './assets/palette';
+import GameBoard from './component/Gameboard';
 
 const theme = createTheme(getPalette());
 
@@ -11,6 +12,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<Box sx={{ display: {lg: 'flex'} }}>
 				<CssBaseline />
+				<GameBoard />
 			</Box>
 		</ThemeProvider>
 	);
