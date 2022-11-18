@@ -1,6 +1,4 @@
-import constants from "../Constants";
-
-export const piece = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+export const pieces = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
 export const getBlocks = (piece) => {
     switch(piece) {
         case 'I':

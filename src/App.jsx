@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { getPalette } from './assets/palette';
-import GameBoard from './component/Gameboard';
+import GameBoard from './component/GameBoard';
 
 const theme = createTheme(getPalette());
 
